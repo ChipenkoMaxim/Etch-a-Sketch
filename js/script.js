@@ -89,13 +89,13 @@ function addRandomBackgroundColor(e) {
   const green = Math.floor((Math.random()*255));
   const blue = Math.floor((Math.random()*255));
   e.target.style.backgroundColor = `rgb(${red},${green},${blue})`;
-  e.target.style.filter = 'brightness(100%)';
+  e.target.style.filter = 'brightness(0%)';
 }
 
 function reduceBrightness(e) {
   const currentBrightness = +getBrightness(e);
-  if (currentBrightness !== 0) {
-    const newBrightness = currentBrightness - 10;
+  if (currentBrightness !== 100) {
+    const newBrightness = currentBrightness + 10;
     e.target.style.filter = `brightness(${newBrightness}%)`;
   }
 }
