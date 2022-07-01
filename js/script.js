@@ -42,6 +42,7 @@ function createRowCell(cellNumber) {
   let div = document.createElement('div');
   div = styleRowCell(div);
   div = addTextContent(div, cellNumber);
+  div.addEventListener('mouseover', addHover);
   return div;
 }
 
@@ -54,6 +55,11 @@ function addTextContent(cell, content) {
   cell.textContent = content;
   return cell;
 }
+
+function addHover(e) {
+  e.target.classList.add('hover-cell');
+}
+
 
 function addToDOM(table) {
   const body = document.querySelector('body');

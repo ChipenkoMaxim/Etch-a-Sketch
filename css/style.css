@@ -18,3 +18,7 @@
   text-align: center;
   border: solid 1px green;
 }
+
+.hover-cell {
+  background-color: blue;
+}
