@@ -1,6 +1,7 @@
 
 createTable();
 
+
 function createTable() {
   let table = document.createElement('div');
   table = fillTable(table);
