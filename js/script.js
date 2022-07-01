@@ -5,7 +5,7 @@ createTableButton.addEventListener('click', () => {
   removeTable();
   tableSize = +prompt("Print x where x is amount rows and columns(x can't be more than 100 and can't be less than 1)");
   if (tableSize > 100) {
-     tableSize = 100;
+    tableSize = 100;
   }
   if (!Number.isInteger(tableSize) || tableSize <= 0) {
     return;
@@ -36,7 +36,6 @@ function styleTable(table) {
 
 
 function fillTable(table) {
-  //const rowCount = 16;
   for (let i = 0; i < tableSize; i++) {
     let row = createRow();
     table.appendChild(row);
@@ -45,7 +44,7 @@ function fillTable(table) {
 }
 
 function createRow() {
-  let row =  document.createElement('div');
+  let row = document.createElement('div');
   row = styleRow(row);
   row = fillRow(row);
   return row;
@@ -57,7 +56,6 @@ function styleRow(row) {
 }
 
 function fillRow(row) {
-  //const rowSize = 16;
   for (let i = 0; i < tableSize; i++) {
     const cellNumber = i + 1;
     const cell = createRowCell(cellNumber);
@@ -66,10 +64,9 @@ function fillRow(row) {
   return row;
 }
 
-function createRowCell(cellNumber) { 
+function createRowCell(cellNumber) {
   let div = document.createElement('div');
   div = styleRowCell(div);
-  //div = addTextContent(div, cellNumber);
   div.addEventListener('mouseover', addHover);
   return div;
 }
