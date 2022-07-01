@@ -57,14 +57,13 @@ function styleRow(row) {
 
 function fillRow(row) {
   for (let i = 0; i < tableSize; i++) {
-    const cellNumber = i + 1;
-    const cell = createRowCell(cellNumber);
+    const cell = createRowCell();
     row.appendChild(cell);
   }
   return row;
 }
 
-function createRowCell(cellNumber) {
+function createRowCell() {
   let div = document.createElement('div');
   div = styleRowCell(div);
   div.addEventListener('mouseover', addRandomBackgroundColor, {
