@@ -1,6 +1,26 @@
-const tableSize = 4;
-createTable();
+let tableSize;
 
+const createTableButton = document.querySelector('button');
+createTableButton.addEventListener('click', () => {
+  removeTable();
+  tableSize = +prompt("Print x where x is amount rows and columns(x can't be more than 100 and can't be less than 1)");
+  if (tableSize > 100) {
+     tableSize = 100;
+  }
+  if (!Number.isInteger(tableSize) || tableSize <= 0) {
+    return;
+  }
+  createTable();
+});
+
+
+function removeTable() {
+  const body = document.querySelector('body');
+  const table = document.querySelector('.table');
+  if (table !== null) {
+    body.removeChild(table);
+  }
+}
 
 function createTable() {
   let table = document.createElement('div');
