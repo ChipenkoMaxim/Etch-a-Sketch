@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* border: solid red; */
+}
+
+
+.table {
+
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  flex: 1;
+  text-align: center;
+  border: solid 1px green;
+}
