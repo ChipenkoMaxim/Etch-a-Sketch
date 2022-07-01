@@ -70,7 +70,7 @@ function createRowCell(cellNumber) {
   div.addEventListener('mouseover', addRandomBackgroundColor, {
     once: true
   });
-  //div.addEventListener('mouseover', )
+  div.addEventListener('mouseover', reduceBrightness);
   return div;
 }
 
@@ -89,8 +89,20 @@ function addRandomBackgroundColor(e) {
   const green = Math.floor((Math.random()*255));
   const blue = Math.floor((Math.random()*255));
   e.target.style.backgroundColor = `rgb(${red},${green},${blue})`;
+  e.target.style.filter = 'brightness(100%)';
 }
 
+function reduceBrightness(e) {
+  const currentBrightness = +getBrightness(e);
+  if (currentBrightness !== 0) {
+    const newBrightness = currentBrightness - 10;
+    e.target.style.filter = `brightness(${newBrightness}%)`;
+  }
+}
+
+function getBrightness(e) {
+  return e.target.style.filter.match(/[0-9]+/).pop();
+}
 
 function addToDOM(table) {
   const body = document.querySelector('body');
