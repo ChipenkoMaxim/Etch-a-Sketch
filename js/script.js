@@ -67,7 +67,10 @@ function fillRow(row) {
 function createRowCell(cellNumber) {
   let div = document.createElement('div');
   div = styleRowCell(div);
-  div.addEventListener('mouseover', addHover);
+  div.addEventListener('mouseover', addRandomBackgroundColor, {
+    once: true
+  });
+  //div.addEventListener('mouseover', )
   return div;
 }
 
@@ -81,8 +84,11 @@ function addTextContent(cell, content) {
   return cell;
 }
 
-function addHover(e) {
-  e.target.classList.add('hover-cell');
+function addRandomBackgroundColor(e) {
+  const red = Math.floor((Math.random()*255));
+  const green = Math.floor((Math.random()*255));
+  const blue = Math.floor((Math.random()*255));
+  e.target.style.backgroundColor = `rgb(${red},${green},${blue})`;
 }
 
 
