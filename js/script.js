@@ -1,16 +1,23 @@
-
+const tableSize = 4;
 createTable();
 
 
 function createTable() {
   let table = document.createElement('div');
   table = fillTable(table);
+  table = styleTable(table);
   addToDOM(table);
 }
 
+function styleTable(table) {
+  table.classList.add('table');
+  return table;
+}
+
+
 function fillTable(table) {
-  const rowCount = 16;
-  for (let i = 0; i < rowCount; i++) {
+  //const rowCount = 16;
+  for (let i = 0; i < tableSize; i++) {
     let row = createRow();
     table.appendChild(row);
   }
@@ -30,8 +37,8 @@ function styleRow(row) {
 }
 
 function fillRow(row) {
-  const rowSize = 16;
-  for (let i = 0; i < rowSize; i++) {
+  //const rowSize = 16;
+  for (let i = 0; i < tableSize; i++) {
     const cellNumber = i + 1;
     const cell = createRowCell(cellNumber);
     row.appendChild(cell);
@@ -42,7 +49,7 @@ function fillRow(row) {
 function createRowCell(cellNumber) { 
   let div = document.createElement('div');
   div = styleRowCell(div);
-  div = addTextContent(div, cellNumber);
+  //div = addTextContent(div, cellNumber);
   div.addEventListener('mouseover', addHover);
   return div;
 }
